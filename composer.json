@@ -1,0 +1,17 @@
+{
+  "name": "zanphp/log",
+  "require": {
+    "php": ">=5.6",
+    "zanphp/contracts": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "ZanPHP\\Log\\": "src/"
+    }
+  },
+  "config": {
+    "preferred-install": "dist",
+    "secure-http": false
+  },
+  "minimum-stability": "dev"
+}
