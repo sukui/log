@@ -1,17 +1,11 @@
 {
   "name": "zanphp/log",
-  "repositories": {
-    "packagist": {
-      "type": "composer",
-      "url": "http://packagist.qima-inc.com"
-    }
-  },
   "require": {
     "php": ">=5.6",
     "zanphp/contracts": "dev-master",
     "zanphp/container": "dev-master",
     "zanphp/coroutine": "dev-master",
-    "zanphp/connection-pool": "dev-master",
+    "zanphp/connection-pool": "dev-laogui",
     "zanphp/exception": "dev-master",
     "psr/log": "1.0.0"
   },
