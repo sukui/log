@@ -33,7 +33,7 @@ class SystemLogger extends BaseLogger
     {
         $connectionManager = make(ConnectionManager::class);
         /** @var ConnectionManager conn */
-        $this->conn = (yield $connectionManager->get($this->connectionConfig));
+        $this->conn = (yield $connectionManager->get($this->connectionConfig, false));
         if ($this->conn instanceof ConnectionEx) {
             $this->writer = new SystemWriterEx($this->conn);
         } else {
