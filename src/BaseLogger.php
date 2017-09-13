@@ -5,6 +5,7 @@ namespace ZanPHP\Log;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
+use ZanPHP\Contracts\Trace\Trace;
 
 abstract class BaseLogger implements LoggerInterface
 {
@@ -223,6 +224,11 @@ abstract class BaseLogger implements LoggerInterface
 
     public function write($level, $message, array $context = array())
     {
+        $trace = (yield getContext("trace"));
+        if ($trace instanceof Trace) {
+            $context['rootId'] = $trace->getRootId();
+            $context['parentId'] = $trace->getParentId();
+        }
         $log = $this->format($level, $message, $context);
         yield $this->doWrite($log);
     }
