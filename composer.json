@@ -4,7 +4,7 @@
     "php": ">=5.6",
     "zanphp/contracts": "dev-master",
     "zanphp/container": "dev-master",
-    "zanphp/coroutine": "dev-master",
+    "zanphp/coroutine": "dev-laogui",
     "zanphp/connection-pool": "dev-laogui",
     "zanphp/exception": "dev-master",
     "psr/log": "1.0.0"
