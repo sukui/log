@@ -46,7 +46,10 @@ class FileWriter implements LogWriter, Async
         if (!$this->callback) {
             return;
         }
-        call_user_func($this->callback, true);
+
+        $callback = $this->callback;
+        $this->callback = null;
+        call_user_func($callback, true);
     }
 
 }

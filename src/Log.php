@@ -96,10 +96,12 @@ class Log
             $result['format'] = strtolower($result['format']);
         }
 
-        /** @var Application $application */
-        $application = make(Application::class);
-        // force set app value to Application name
-        $result['app'] = $application->getName();
+        if (!isset($result['app'])) {
+            /** @var Application $application */
+            $application = make(Application::class);
+            // force set app value to Application name
+            $result['app'] = $application->getName();
+        }
 
         return $result;
     }
